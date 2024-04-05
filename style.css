@@ -1,0 +1,1420 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Montserrat', sans-serif;
+  scroll-behavior: smooth;
+  text-decoration: none;
+}
+
+body{
+  width:100%;
+  height: 100vh;
+  /* background-color: #1a1a1b; */
+  overflow-x: hidden;
+}
+html{
+  font-size: 62.5%;  /*1rem = 10px*/
+  overflow-x:hidden ;
+}
+
+/* ================================ Styling header ================================================= */
+
+header{
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 1rem 0;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  transition: box-shadow 0.3s ease;
+  backdrop-filter: blur(0.5rem);
+  z-index: 1;
+  /* background-color: rgb(3, 3, 3,0.2); */
+  background-color: white;
+}
+
+
+header .navbar{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  /* max-width: 120rem; */
+  margin: 0 auto;
+  padding: 0 3rem;
+}
+
+.navbar .company-logo{
+  height: 7rem;
+}
+
+.navbar .menu-links{
+  display: flex;
+  list-style: none;
+  gap: 4rem;
+}
+.navbar a{
+  text-decoration: none;
+  transition: 0.3s ease;
+  color: black;
+  text-transform: uppercase;
+}
+.navbar a:hover{
+  color:rgb(237, 129, 6);
+}
+
+.navbar li{
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+
+/*======================================== Banner Section Styling ======================================== */
+
+.banner-section {
+  height: 100vh;
+  background-image: linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.2)), url("./assets/images/container2.jpg");
+  background-position: center;
+  background-size: cover;
+  display: flex;
+  align-items: center;
+  padding: 0 2rem;
+
+}
+
+.banner-section .content{
+  max-width: 120rem;
+  margin: 0 auto;
+  width: 100%;
+  color: white;
+}
+.banner-section .content h2{
+  font-size: 2rem;
+  max-width: 60rem;
+  color: rgb(250, 153, 42);;
+}
+.banner-section .content h1{
+  font-size: 6rem;
+  max-width: 65rem;
+  line-height: 6rem;
+}
+.banner-section .content p{
+  font-size: 1.2rem;
+  font-weight: 300;
+  max-width: 60rem;
+  margin-top: 1.5rem;
+}
+.banner-section .content button{
+  padding: 1.2rem 3rem;
+  border:none;
+  background-color: rgb(237, 129, 6);
+  border-radius: 2rem;
+  margin-top: 3rem;
+  cursor:pointer;
+  font-weight: 500;
+  transition: 0.2s ease;
+  color: white;
+}
+.banner-section .content button:hover{
+  color:white;
+  background-color:rgb(233, 111, 5); 
+}
+
+/* Close Button Styling */
+#close-menu-btn{
+  position: absolute;
+  right: 3rem;
+  top:3rem;
+  cursor: pointer;
+  display: none;
+}
+
+/* Menu Button Styling */
+#menu-btn{
+  color:white;
+  cursor:pointer;
+  display: none;
+}
+
+/* =============== Responsive Header and  Banner Section =================== 
+ */
+
+@media(max-width: 768px){
+  .navbar .company-logo{
+    height: 6rem;
+  }
+
+  .navbar .menu-links{
+    position: fixed;
+    top:0;
+    right:-400px;
+    width: 50%;
+    height: 100vh;
+    background-color: #1a1a1b;
+    flex-direction: column;
+    padding: 7rem 4rem 0;
+    transition: right 0.2s ease;
+  }
+  .navbar a{
+    color:white;
+  }
+
+  #close-menu-btn{
+    color:white;
+    display: block;
+  }
+  #menu-btn{
+    color:black;
+    display: block;
+  }
+header.show-menu::before{
+  content:"";
+  position: fixed;
+  right:0;
+  top:0;
+  width:100%;
+  height: 100%;
+  backdrop-filter: blur(0.5rem);
+}
+header.show-menu .navbar .menu-links{
+right:0
+}
+/*========================================= Header End ====================================== */
+/* ------------ Responsive Banner Section ------- */
+.banner-section .content{
+  text-align: center;
+}
+.banner-section .content :is(h2,h1,p){
+  max-width: 100%;
+}
+.banner-section .content h1{
+  font-size: 4rem;
+  line-height: 6rem;
+}
+
+}
+
+@media(max-width: 540px){
+  .navbar .menu-links{
+    position: fixed;
+    top:0;
+    right:-400px;
+    width: 70%;
+    height: 100vh;
+    background-color: #1a1a1b;
+    flex-direction: column;
+    padding: 7rem 4rem 0;
+    transition: right 0.2s ease;
+  }
+
+  .navbar .company-logo{
+    height: 4rem;
+  }
+}
+/* ========================== Banner End ========================== */
+
+/* ======================================== Certificate Carousal ================================ */
+
+@keyframes slide{
+  from{
+    transform: translateX(0);
+  }
+  to{
+    transform: translateX(-100%);
+  }
+}
+.certificate{
+  overflow: hidden;
+  padding: 6rem 0 3rem 0 ;
+  white-space: nowrap;
+  position: relative;
+}
+
+.certificate::before,.certificate::after{
+  position: absolute;
+  top:0;
+  width:20rem;
+  height: 100%;
+  content: "";
+  z-index: 2;
+}
+/* .certificate::before{
+  left:0;
+  background: linear-gradient(to left,rgba(255,255,255,0),white);
+}
+.certificate::after{
+  right:0;
+  background: linear-gradient(to right,rgba(255,255,255,0),white);
+} */
+.certificate:hover .certificate-slide{
+  animation-play-state: paused;
+}
+.certificate-slide{
+  display: inline-block;
+  animation: 15s slide infinite linear;
+}
+.certificate-slide img{
+  height: 10rem;
+  margin: 0 4rem;
+}
+
+
+
+
+/* ======================================= About Us Section ================================ */
+
+.about{
+  /* height: 60rem; */
+  height: auto;
+  width: 100%;
+  background: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 1rem 0;
+  flex-direction: column;
+}
+
+.about-heading{
+  text-align: center;
+  font-weight: 300;
+  word-spacing: 3px;
+  line-height: 2em;
+  padding-bottom: 0.35em;
+  position: relative;
+  padding: 0;
+  margin: 0 0 2rem 0;
+  font-weight: 700;
+  font-size: 5rem;
+  color: rgb(49, 44, 44);
+  text-transform: uppercase;
+  
+}
+.about-heading:before {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 10rem;
+  height: 1px;
+  content: "";
+  left: 50%;
+  margin-left: -50px;
+  background-color: #777;
+}
+
+
+.about .about-main img{
+width: 50rem;
+max-width: 100%;
+height: auto;
+padding: 0 1rem;
+}
+
+.about-text{
+  width: 60rem;
+  max-width: 100%;
+  padding: 0 1rem;
+}
+.about-main{
+  width: 129rem;
+  max-width: 95%;
+  margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.about-text h1{
+  font-size: 4rem;
+  font-weight: 700;
+  margin-bottom: 3rem;
+}
+.about-text p{
+  font-size: 1.6rem ;
+  color: #777777;
+  line-height: 2.5rem ;
+  margin-bottom: 3.5rem;
+}
+.about-btn button{
+  background: white;
+  padding: 2rem 3rem;
+  font-size: 1.6rem;
+  font-weight: bold;
+  color:white;
+  background-color:rgb(237, 129, 6) ;
+  border: none;
+  outline: none;
+  border-radius: 1rem;
+  box-shadow: 0 1.6rem 3.2rem 0 rgba(0, 0, 0, 0.2);
+}
+
+.about-btn button:hover{
+  background-color: orange;
+  color: white;
+ transition: .3s;
+ cursor: pointer;
+}
+
+/* ----------- Responsive about us css code ---------------- */
+
+/* @media screen and (max-width:1250px){
+  .about{
+    width: 100%;
+    height: auto;
+    padding: 6rem 0;
+  }
+  .about-text{
+    text-align: center;
+    margin: 4rem;
+  }
+} */
+@media only screen and (max-width: 768px){
+
+  /* .about{
+    height: auto;
+  } */
+  .about-heading{
+    font-size: 2.5rem;
+  }
+ 
+  .about .about-main img{
+    width: 50rem;
+    max-width: 100%;
+    height: auto;
+    padding: 0 1rem;
+    }
+  .about-text h1{
+    font-size:  2.5rem;
+    padding-top: 3rem;
+    text-align: center;
+  }
+  .about-text p{
+    font-size: 1.4rem ;
+    color: #777777;
+    line-height: 2.2rem ;
+    margin-bottom: 2.5rem;
+    text-align: center;
+  }
+  .about-btn{
+    display: flex;
+    justify-content: center;
+  }
+ 
+}
+
+@media only screen and (min-width: 768px) and (max-width: 1024px) {
+  /* .about{
+    height: auto;
+  } */
+
+  .about-heading{
+    font-size: 4rem;
+  }
+  .about-main{
+    max-width: 100%;
+  }
+  .about .about-main img{
+    width: 35rem;
+    }
+  .about-text h1{
+    font-size:  3rem;
+    padding-top: 3rem;
+    text-align: center;
+  }
+  .about-text p{
+    font-size: 2rem ;
+    color: #777777;
+    line-height: 2.5rem ;
+    margin-bottom: 2.5rem;
+    text-align: justify;
+  }
+  .about-btn{
+    display: flex;
+    justify-content: center;
+  }
+ 
+}
+
+
+/* ======================================= About Us end ============================================ */
+
+
+/* ===========================================  MANUFACTURING UNITS CSS ============================================== */
+
+.manufacture-container{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  margin: 4rem 0;
+}
+
+.manufacture-heading {
+  text-align: center;
+  font-weight: 300;
+  word-spacing: 3px;
+  line-height: 2em;
+  padding-bottom: 0.35em;
+  position: relative;
+  padding: 0;
+  margin: 0 0 2rem 0;
+  font-weight: 700;
+  font-size: 5rem;
+  color: rgb(49, 44, 44);
+  text-transform: uppercase;
+  
+}
+.manufacture-heading:before {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 10rem;
+  height: 1px;
+  content: "";
+  left: 50%;
+  margin-left: -50px;
+  background-color: #777;
+}
+
+
+
+
+@keyframes slide{
+  from{
+    transform: translateX(0);
+  }
+  to{
+    transform: translateX(-100%);
+  }
+}
+
+.manufacture{
+  overflow: hidden;
+  padding: 6rem 0 ;
+  white-space: nowrap;
+  position: relative;
+}
+
+.manufacture::before,.manufacture::after{
+  position: absolute;
+  top:0;
+  width:20rem;
+  height: 100%;
+  content: "";
+  z-index: 2;
+}
+/* .manufacture::before{
+  left:0;
+  background: linear-gradient(to left,rgba(255,255,255,0),white);
+}
+.manufacture::after{
+  right:0;
+  background: linear-gradient(to right,rgba(255,255,255,0),white);
+} */
+.manufacture:hover .manufacture-slide{
+  animation-play-state: paused;
+}
+.manufacture-slide{
+  display: inline-block;
+  animation: 10s slide infinite linear;
+}
+.manufacture-slide img{
+  height: 10rem;
+  margin: 0 4rem;
+}
+
+/* =========Responsive manufactureing unit css =========== */
+
+@media only screen and (max-width: 768px) {
+  .manufacture-heading {
+    font-size: 2.5rem;
+  }
+}
+
+
+
+
+
+/* ========================================================= PRODUCTS SECTION CSS =================================================== */
+
+.container{
+  background: #f1f1f1;
+  padding: 15px 9%;
+  padding-bottom: 100px;
+}
+
+.container .product-heading {
+  text-align: center;
+  font-weight: 300;
+  word-spacing: 3px;
+  line-height: 2em;
+  padding-bottom: 0.35em;
+  position: relative;
+  padding: 0;
+  margin: 0 0 2rem 0;
+  font-weight: 700;
+  font-size: 5rem;
+  color: rgb(49, 44, 44);
+  text-transform: uppercase;
+}
+
+.container .product-heading:after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  transform: translateX(-50%);
+  width: 10rem;
+  height: 2px;
+  background-color: #777;
+}
+
+.container .product-container{
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
+  gap: 15px;
+}
+
+.container .product-container .product-card{
+  box-shadow: 0 5px 10px rgba(0, 0, 0, .2);
+  border-radius: 5px;
+  background: #fff;
+  text-align: center;
+  padding: 30px 20px;
+}
+
+.container .product-container .product-card img{
+  height: 200px;
+  width: 100%;
+  object-fit: cover;
+  border-radius: 5px 5px 0 0;
+}
+
+.container .product-container .product-card h3{
+  color: #444;
+  font-size: 22px;
+  padding: 10px 0;
+}
+
+.container .product-container .product-card p{
+  color: #777;
+  font-size: 15px;
+  line-height: 1.8;
+}
+
+.container .product-container .product-card:hover{
+  box-shadow: 0 10px 15px rgba(0, 0, 0, .3);
+  transform: scale(1.03);
+}
+
+
+ /* ========================== Map and Schedule a call Section    ==========================    */
+
+
+
+
+
+
+ .map-schedule{
+  width: 129rem;
+  max-width: 95%;
+  margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  padding: 4rem 0;
+}
+
+.map-schedule .world-map{
+width: 60rem;
+max-width: 100%;
+height: auto;
+padding: 0 1rem;
+background-color: rgb(15, 15, 39);
+overflow-y:hidden;
+overflow-x: hidden;
+margin: 3rem 0;
+position: relative;
+}
+
+.call-container{
+  width: 60rem;
+  max-width: 100%;
+  padding: 0 1rem;
+}
+
+
+.call-container h1{
+  font-size: 4rem;
+  font-weight: 700;
+  margin-bottom: 3rem;
+}
+.call-container p{
+  font-size: 1.6rem ;
+  color: #777777;
+  line-height: 2.5rem ;
+  margin-bottom: 3.5rem;
+}
+.call-container button{
+  background: white;
+  padding: 2rem 3rem;
+  font-size: 1.6rem;
+  font-weight: bold;
+  color:white;
+  background-color:rgb(237, 129, 6) ;
+  border: none;
+  outline: none;
+  border-radius: 1rem;
+  box-shadow: 0 1.6rem 3.2rem 0 rgba(0, 0, 0, 0.2);
+}
+
+.call-container button:hover{
+  background-color: orange;
+  color: white;
+ transition: .3s;
+ cursor: pointer;
+}
+
+#country-name{
+  position: absolute;
+  background-color: white;
+  width: fit-content;
+  opacity: 0;
+  border-radius: 0.5rem;
+  border: 0.3rem solid pink;
+  padding: 0.5rem;
+  font-size: 1.5rem;
+ }
+
+ .world-map svg{
+  height: 40rem;
+  width: 100%;
+ }
+ svg path{
+  cursor: pointer;
+ }
+/* 
+ svg path:hover{
+  fill: pink;
+ } */
+
+ /* ============================================================ 
+                          FAQs and Form Section    
+ ===============================================================    */
+
+ .faq-form-container{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  /* background: #7d2ae8;
+  padding: 40px; */
+ }
+ .accordion{
+  display: flex;
+  max-width: 100%;
+  width: 100%;
+  align-items: center;
+  justify-content: space-between;
+  background: #fff;
+  background-color:  #f1f1f1;
+  /* border-radius: 25px; */
+  padding: 45px 90px 45px 60px;
+}
+.accordion .image-box{
+  height: 360px;
+  width: 35%;
+}
+.accordion .image-box img{
+  height: 100%;
+  width: 100%;
+  object-fit: contain;
+}
+.accordion .accordion-text{
+  width: 60%;
+}
+.accordion .accordion-text .title{
+  font-size: 35px;
+  font-weight: 600;
+}
+.accordion .accordion-text .title p{
+  font-size: large;
+  color: orange;
+}
+.accordion .accordion-text .faq-text{
+  margin-top: 40px;
+  height: 263px;
+  overflow-y: auto;
+}
+.faq-text::-webkit-scrollbar{
+  display: none;
+}
+.accordion .accordion-text li{
+  list-style: none;
+  cursor: pointer;
+}
+.accordion-text li .question-arrow{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.accordion-text li .question-arrow .question{
+  font-size: 18px;
+  font-weight: 500;
+  color: #595959;
+  transition: all 0.3s ease;
+}
+.accordion-text li .question-arrow .arrow{
+  font-size: 20px;
+  color: #595959;
+  transition: all 0.3s ease;
+}
+.accordion-text li.showAnswer .question-arrow .arrow{
+  transform: rotate(-180deg);
+}
+.accordion-text li:hover .question-arrow .question,
+.accordion-text li:hover .question-arrow .arrow{
+  color: orange;
+}
+.accordion-text li.showAnswer .question-arrow .question,
+.accordion-text li.showAnswer .question-arrow .arrow{
+  color: black;
+}
+.accordion-text li .line{
+  display: block;
+  height: 2px;
+  width: 100%;
+  margin: 20px 0;
+  background: rgba(0, 0, 0, 0.1);
+}
+.accordion-text li p{
+  width: 92%;
+  font-size: 15px;
+  font-weight: 500;
+  color: #595959;
+  display: none;
+}
+.accordion-text li.showAnswer p{
+  display: block;
+}
+
+@media (max-width: 994px) {
+  /* body{
+    padding: 40px 20px;
+  } */
+  .accordion{
+    max-width: 100%;
+    padding: 45px 60px 45px 60px;
+  }
+  .accordion .image-box{
+    height: 360px;
+    width: 220px;
+  }
+  .accordion .accordion-text{
+    width: 63%;
+  }
+}
+@media (max-width: 820px) {
+  .accordion{
+    flex-direction: column;
+  }
+  .accordion .image-box{
+    height: 360px;
+    width: 300px;
+    width: 100%;
+    border-radius: 25px;
+    padding: 30px;
+  }
+  .accordion .accordion-text{
+    width: 100%;
+    margin-top: 30px;
+  }
+}
+@media (max-width: 538px) {
+  .accordion{
+    padding: 25px;
+  }
+  .accordion-text li p{
+    width: 98%;
+  }
+}
+
+
+ /* ============================================================ 
+                          Contact Us Section    
+ ===============================================================    */
+
+.query-container{
+  width: 100%;
+  min-width: 420px;
+  padding: 35px 50px;
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+
+.contact-form{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color:  #f1f1f1;
+  padding: 2rem 4rem;
+  flex: 1;
+}
+.form-heading{
+  font-size: 30px;
+  text-align: center;
+  color: #1c093c;
+  font-weight: 500;
+}
+
+
+.form-title{
+  margin: auto;
+  width: 100%;
+  text-align: center;
+  color: #606060;
+  font-size: 14px;
+  font-weight: 400;
+}
+
+form{
+  width: 100%;
+  margin: 30px auto 0 auto;
+}
+
+.row{
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-gap: 20px 30px;
+  margin-bottom: 20px;
+}
+
+label{
+  color: #1c093c;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+textarea, input{
+  width: 100%;
+  font-weight: 400;
+  padding: 8px 10px;
+  border-radius: 5px;
+  border: 1.2px solid #c4cae0;
+  margin-top: 5px;
+}
+
+textarea{
+  resize: none;
+}
+
+textarea:focus,
+input:focus{
+  outline: none;
+  border-color: #0a0a0a;
+}
+
+button{
+  border: none;
+  padding: 10px 20px;
+  background: linear-gradient(130deg, #6f6dfa, #4c46f5);
+  color: #ffffff;
+  border-radius: 50px;
+}
+
+.location-container{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem 2rem;
+  flex:1;
+}
+
+@media (max-width: 994px) {
+ .query-container{
+  flex-direction: column;
+ }
+ .query-container .contact-form{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+ }
+ .location-container{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem 2rem;
+ }
+}
+@media (max-width: 820px) {
+  .query-container{
+    flex-direction: column;
+   }
+   .query-container .contact-form{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 2rem 2rem;
+    width: 80vw;
+   }
+   .location-container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem 2rem;
+    width: 80vw;
+   }
+}
+@media (max-width: 538px) {
+  .query-container{
+    flex-direction: column;
+   }
+   .query-container .contact-form{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 2rem 2rem;
+   }
+   .location-container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem 2rem;
+   }
+}
+
+/* ============================================================ 
+                          Footer Section    
+ ===============================================================    */
+
+ footer{
+  position: relative;
+  width: 100%;
+  height: auto;
+  padding: 5rem 10rem;
+  background: rgb(242, 241, 241);
+ }
+ footer .footer-container{
+  width:100%;
+  display:grid;
+  grid-template-columns: 2fr 1fr 1fr 1fr 1fr;
+  grid-gap: 2rem;
+ }
+
+ footer .footer-container .footer-sec h2{
+  position: relative;
+  color: black;
+  font-weight: 600;
+  margin-bottom: 15px;
+ }
+ footer .footer-container .footer-sec p{
+  color: #555;
+  font-size: 1.2rem;
+ }
+
+ footer .footer-container .footer-sec .social-icons{
+  margin-top: 2rem;
+  display: grid;
+  grid-template-columns: repeat(4,50px);
+ }
+
+ footer .footer-container .footer-sec .social-icons li{
+  list-style: none;
+ }
+ footer .footer-container .social-icons li a{
+  display: inline-block;
+  width:3.6rem;
+  height: 3.6rem;
+  background: #333;
+  display: grid;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+ }
+ .footer-container .social-icons li a:hover {
+  color: orange;
+}
+
+
+ .logo-sec img{
+  height: 8rem;
+ }
+
+ footer .footer-container .social-icons li a i{
+  color: white;
+  font-size: 2rem;
+ }
+ .footer-container .social-icons li a i:hover{
+  color:#e7aa27;
+ }
+
+ footer .footer-container .quicklinks{
+  position: relative;
+ }
+ footer .footer-container .quicklinks ul li{
+list-style: none;
+margin-bottom: 1rem;
+font-size: 1.2rem;
+ }
+
+ footer .footer-container .quicklinks ul li a{
+  color: #555;
+  text-decoration: none;
+  /* margin-bottom: 1rem; */
+  display: inline-block;
+ }
+
+ footer .footer-container .reach-sec ul li{
+  margin-bottom: 1rem;
+ }
+ .office-sec ul{
+  position: relative;
+ }
+
+ .office-sec ul li{
+  display: grid;
+  grid-template-columns: 3rem 1fr;
+  margin-bottom: 1.6rem;
+ }
+
+ footer .footer-container .office-sec li span{
+  color:#555;
+  font-size: 2rem;
+ }
+
+ footer .footer-container .contact-sec ul li{
+  margin-bottom: 1rem;
+ }
+ .contact-sec ul{
+  position: relative;
+ }
+
+ .contact-sec ul li{
+  display: grid;
+  grid-template-columns: 3rem 1fr;
+  margin-bottom: 1.6rem;
+ }
+
+ footer .footer-container .contact-sec li span{
+  color:#555;
+  font-size: 2rem;
+ }
+
+ .copyrightText{
+  width:100%;
+  /* background: white; */
+  /* padding: 2rem 10rem 3rem;
+  text-align: center; */
+ }
+
+ .copyrightText hr{
+  margin: 2rem 0;
+  
+ }
+ .copyrightText p{
+  text-align: center;
+  font-size: 1.2rem;
+ }
+
+ @media (max-width:991px){
+  footer{
+    padding: 1rem;
+  }
+  footer .footer-container{
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    grid-gap: 2rem;
+  }
+  .footer-sec{
+    margin: 1rem 2rem;
+  }
+ }
+
+ @media (max-width:768px){
+  footer .footer-container{
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(1,1fr);
+    grid-gap: 2rem;
+    padding-left: 4rem;
+  }
+ }
+
+
+
+
+ /* =========================================== rice.html CSS ================================== */
+
+ .rice{
+  height: 60rem;
+  width: 100%;
+  background: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 1rem 0;
+  flex-direction: column;
+}
+
+
+.rice .rice-main img{
+width: 50rem;
+max-width: 100%;
+height: auto;
+padding: 0 1rem;
+}
+
+.rice-text{
+  width: 60rem;
+  max-width: 100%;
+  padding: 0 1rem;
+}
+.rice-main{
+  width: 129rem;
+  max-width: 95%;
+  margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.rice-text h1{
+  font-size: 4rem;
+  font-weight: 700;
+  margin-bottom: 3rem;
+}
+.rice-text p{
+  font-size: 1.6rem ;
+  color: #777777;
+  line-height: 2.5rem ;
+  margin-bottom: 3.5rem;
+}
+.rice-btn button{
+  background: white;
+  padding: 2rem 3rem;
+  font-size: 1.6rem;
+  font-weight: bold;
+  color:white;
+  background-color:rgb(237, 129, 6) ;
+  border: none;
+  outline: none;
+  border-radius: 1rem;
+  box-shadow: 0 1.6rem 3.2rem 0 rgba(0, 0, 0, 0.2);
+}
+
+.rice-btn button:hover{
+  background-color: orange;
+  color: white;
+ transition: .3s;
+ cursor: pointer;
+}
+
+/* ----------- Responsive rice us css code ---------------- */
+
+@media screen and (max-width:1250px){
+  .rice{
+    width: 100%;
+    height: auto;
+    padding: 6rem 0;
+  }
+  .rice-text{
+    text-align: center;
+    margin: 4rem;
+  }
+}
+@media screen and (max-width:650px){
+  .rice .rice-main img{
+    margin-bottom: 3.5rem;
+  }
+  .rice-text h1{
+    font-size: 4.5rem;
+    margin-bottom: 2rem;
+  }
+}
+
+
+
+/* ==================================================== extract.html css ================================================= */
+
+.extract{
+  height: 60rem;
+  width: 100%;
+  background: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 1rem 0;
+  flex-direction: column;
+}
+
+
+.extract .extract-main img{
+width: 50rem;
+max-width: 100%;
+height: auto;
+padding: 0 1rem;
+}
+
+.extract-text{
+  width: 60rem;
+  max-width: 100%;
+  padding: 0 1rem;
+}
+.extract-main{
+  width: 129rem;
+  max-width: 95%;
+  margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.extract-text h1{
+  font-size: 4rem;
+  font-weight: 700;
+  margin-bottom: 3rem;
+}
+.extract-text p{
+  font-size: 1.6rem ;
+  color: #777777;
+  line-height: 2.5rem ;
+  margin-bottom: 3.5rem;
+}
+.extract-btn button{
+  background: white;
+  padding: 2rem 3rem;
+  font-size: 1.6rem;
+  font-weight: bold;
+  color:white;
+  background-color:rgb(237, 129, 6) ;
+  border: none;
+  outline: none;
+  border-radius: 1rem;
+  box-shadow: 0 1.6rem 3.2rem 0 rgba(0, 0, 0, 0.2);
+}
+
+.extract-btn button:hover{
+  background-color: orange;
+  color: white;
+ transition: .3s;
+ cursor: pointer;
+}
+
+/* ----------- Responsive extract us css code ---------------- */
+
+@media screen and (max-width:1250px){
+  .extract{
+    width: 100%;
+    height: auto;
+    padding: 6rem 0;
+  }
+  .extract-text{
+    text-align: center;
+    margin: 4rem;
+  }
+}
+@media screen and (max-width:650px){
+  .extract .extract-main img{
+    margin-bottom: 3.5rem;
+  }
+  .extract-text h1{
+    font-size: 4.5rem;
+    margin-bottom: 2rem;
+  }
+}
+
+/* ==================================================== extract.html css ================================================= */
+
+.food{
+  height: 60rem;
+  width: 100%;
+  background: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 1rem 0;
+  flex-direction: column;
+}
+
+
+.food .food-main img{
+width: 50rem;
+max-width: 100%;
+height: auto;
+padding: 0 1rem;
+}
+
+.food-text{
+  width: 60rem;
+  max-width: 100%;
+  padding: 0 1rem;
+}
+.food-main{
+  width: 129rem;
+  max-width: 95%;
+  margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.food-text h1{
+  font-size: 4rem;
+  font-weight: 700;
+  margin-bottom: 3rem;
+}
+.food-text p{
+  font-size: 1.6rem ;
+  color: #777777;
+  line-height: 2.5rem ;
+  margin-bottom: 3.5rem;
+}
+.food-btn button{
+  background: white;
+  padding: 2rem 3rem;
+  font-size: 1.6rem;
+  font-weight: bold;
+  color:white;
+  background-color:rgb(237, 129, 6) ;
+  border: none;
+  outline: none;
+  border-radius: 1rem;
+  box-shadow: 0 1.6rem 3.2rem 0 rgba(0, 0, 0, 0.2);
+}
+
+.food-btn button:hover{
+  background-color: orange;
+  color: white;
+ transition: .3s;
+ cursor: pointer;
+}
+
+/* ----------- Responsive food.html css code ---------------- */
+
+@media screen and (max-width:1250px){
+  .food{
+    width: 100%;
+    height: auto;
+    padding: 6rem 0;
+  }
+  .food-text{
+    text-align: center;
+    margin: 4rem;
+  }
+}
+@media screen and (max-width:650px){
+  .food .food-main img{
+    margin-bottom: 3.5rem;
+  }
+  .food-text h1{
+    font-size: 4.5rem;
+    margin-bottom: 2rem;
+  }
+}
