@@ -341,7 +341,7 @@ padding: 0 1rem;
   font-size: 1.6rem;
   font-weight: bold;
   color:white;
-  background-color:rgb(237, 129, 6) ;
+  background-color:#ed8106 ;
   border: none;
   outline: none;
   border-radius: 1rem;
@@ -1150,7 +1150,7 @@ font-size: 1.2rem;
  /* =========================================== rice.html CSS ================================== */
 
  .rice{
-  height: 60rem;
+  height: auto;
   width: 100%;
   background: white;
   display: flex;
@@ -1159,86 +1159,104 @@ font-size: 1.2rem;
   margin: 1rem 0;
   flex-direction: column;
 }
-
-
-.rice .rice-main img{
-width: 50rem;
-max-width: 100%;
-height: auto;
-padding: 0 1rem;
+#rice-banner-section{
+  background-image: linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.2)), url("./assets/images/Rice/sandy-ravaloniaina-rARwqh9IXEE-unsplash.jpg");
 }
-
-.rice-text{
-  width: 60rem;
-  max-width: 100%;
-  padding: 0 1rem;
-}
-.rice-main{
-  width: 129rem;
-  max-width: 95%;
-  margin: 0 auto;
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  justify-content: space-around;
-}
-
-.rice-text h1{
-  font-size: 4rem;
+.rice-heading{
+  text-align: center;
+  font-weight: 300;
+  word-spacing: 3px;
+  line-height: 2em;
+  padding-bottom: 0.35em;
+  position: relative;
+  padding: 0;
+  margin: 0 0 2rem 0;
   font-weight: 700;
-  margin-bottom: 3rem;
+  font-size: 5rem;
+  color: rgb(49, 44, 44);
+  text-transform: uppercase;
+  
 }
-.rice-text p{
-  font-size: 1.6rem ;
-  color: #777777;
-  line-height: 2.5rem ;
-  margin-bottom: 3.5rem;
-}
-.rice-btn button{
-  background: white;
-  padding: 2rem 3rem;
-  font-size: 1.6rem;
-  font-weight: bold;
-  color:white;
-  background-color:rgb(237, 129, 6) ;
-  border: none;
-  outline: none;
-  border-radius: 1rem;
-  box-shadow: 0 1.6rem 3.2rem 0 rgba(0, 0, 0, 0.2);
+.rice-heading:before {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 10rem;
+  height: 1px;
+  content: "";
+  left: 50%;
+  margin-left: -50px;
+  background-color: #777;
 }
 
-.rice-btn button:hover{
-  background-color: orange;
-  color: white;
- transition: .3s;
- cursor: pointer;
+.rice-grid-container{
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  /* gap: 10px; */
+  grid-auto-rows: minmax(100px, auto);
 }
-
-/* ----------- Responsive rice us css code ---------------- */
-
-@media screen and (max-width:1250px){
-  .rice{
-    width: 100%;
-    height: auto;
-    padding: 6rem 0;
+.grid-item{
+  background-color: #c9c1c1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  gap: 4rem;
+  padding: 4rem 10rem;
+}
+.grid-item img{
+  height: 20rem;
+}
+.grid-item2 {
+  background-color: #c9c1c1;
+  padding: 4rem 1rem 4rem 3rem;
+  display: flex;
+  font-size: 1.4rem;
+  font-weight: 900;
+  justify-content: center;
+  /* align-items: center; */
+}
+.grid-item2 table{
+  width: 100%;
+  border-collapse: collapse;
+}
+.rice-description{
+  background-color: #c9c1c1;
+  padding: 2rem 4rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.4rem;
+  line-height: 2rem;
+}
+@media screen and (max-width: 768px) {
+  .rice-grid-container {
+    grid-template-columns: 1fr; /* Change to two columns on smaller screens */
   }
-  .rice-text{
-    text-align: center;
-    margin: 4rem;
+
+  .grid-item {
+    padding: 4rem 2rem; /* Reduce padding for grid items */
+  }
+
+  .grid-item2 {
+    padding: 2rem 1rem; /* Adjust padding for grid item 2 */
+  }
+
+  .grid-item img {
+    height: auto; /* Make images responsive */
+    max-width: 100%; /* Ensure images don't overflow */
   }
 }
-@media screen and (max-width:650px){
-  .rice .rice-main img{
-    margin-bottom: 3.5rem;
+
+@media screen and (max-width: 480px) {
+  .rice-heading {
+    font-size: 2rem; /* Decrease font size for smaller screens */
+    padding: 2rem 0rem; /* Adjust padding for smaller screens */
   }
-  .rice-text h1{
-    font-size: 4.5rem;
-    margin-bottom: 2rem;
+
+  .rice-grid-container {
+    grid-template-columns: 1fr; /* Single column layout on smallest screens */
   }
 }
-
-
-
 /* ==================================================== extract.html css ================================================= */
 
 .extract{
