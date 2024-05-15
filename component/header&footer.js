@@ -7,9 +7,9 @@ class myHeader extends HTMLElement {
         <ul class="menu-links">
           <span id="close-menu-btn" class="material-symbols-outlined"><i class="fa-solid fa-xmark fa-2xl"></i></span>
           <li><a href="./index.html">Home</a></li>
-          <li><a href="#about">About</a></li>
-          <li><a href="#products">Products</a></li>
-          <li><a href="#contact">Contact Us</a></li>
+          <li><a href="#certificateId">About</a></li>
+          <li><a href="#manufactureId">Products</a></li>
+          <li><a href="#questionId">Contact Us</a></li>
         </ul>
         <span id="menu-btn" class="material-symbols-outlined"><i class="fa-solid fa-bars fa-2xl"></i></span>
       </nav>
