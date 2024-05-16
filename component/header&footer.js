@@ -9,7 +9,7 @@ class myHeader extends HTMLElement {
           <li><a href="./index.html">Home</a></li>
           <li><a href="#certificateId">About</a></li>
           <li><a href="#manufactureId">Products</a></li>
-          <li><a href="#questionId">Contact Us</a></li>
+          <li><a href="./contact.html">Contact Us</a></li>
         </ul>
         <span id="menu-btn" class="material-symbols-outlined"><i class="fa-solid fa-bars fa-2xl"></i></span>
       </nav>
