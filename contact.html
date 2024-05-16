@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hillman Contact</title>
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+      integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css" />
+
+</head>
+<body>
+    <!-- ======================================================= 
+                    Header
+    ========================================================== -->
+    <custom-header></custom-header>
+    <!-- ======================================================= 
+                    Contact Secttion
+    ========================================================== -->
+    <section class="contact-section">
+        <h1 class="contact-section-heading">CONTACT US</h1>
+        <div class="contact-section-heading-underline"></div>
+        <p class="contact-section-heading-decription">Eaque iure! Expedita, sint. Rem iste, dolor est laborum, eos autem tempora ipsa sunt, accusamus iure numquam ex enim aliquid eveniet.</p>
+        <div class="contact-section-query-container" id="contact">
+            <div class="contact-section-location-container">
+              <iframe
+                class="location-container-map"
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d234700.9000290281!2d77.24107900392004!3d23.199323871704163!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x397c428f8fd68fbd%3A0x2155716d572d4f8!2sBhopal%2C%20Madhya%20Pradesh!5e0!3m2!1sen!2sin!4v1710495577410!5m2!1sen!2sin"
+                width="600"
+                height="450"
+                style="border: 0"
+                allowfullscreen=""
+                loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade"
+              ></iframe>
+              <h5>Address</h5>
+                <a href="#" target="_blank"
+                    class="d-inline-block text-decoration-none text-dark mb-2">
+                    <i class="fa-solid fa-map-location-dot"></i> Danish Kung, Bhopal, MP, 462042
+                </a>
+
+                <h5 class="mt-4">Call us</h5>
+                <a href="tel: +1234567890" class="d-inline-block mb-2 text-decoration-none text-dark">
+                    <i class="fa-solid fa-headset"></i></i> +91 0123456789
+                </a><br>
+                <a href="tel: +1234567890" class="d-inline-block mb-2 text-decoration-none text-dark">
+                    <i class="fa-solid fa-headset"></i> +91 0123456789
+                </a>                
+
+                <h5 class="mt-4">Email</h5>
+                <a href="mailto: abc@gmail.com"
+                    class="d-inline-block mb-2 text-decoration-none text-dark">
+                    <i class="fa-solid fa-envelope"></i> abc@gmail.com
+                </a><br>
+                <a href="mailto: abc@gmail.com"
+                    class="d-inline-block mb-2 text-decoration-none text-dark">
+                    <i class="fa-solid fa-envelope"></i> abc@gmail.com
+                </a>
+
+                <h5 class="mt-4">Follow us</h5>
+                <a href="#" class="d-inline-block text-dark fs-5 me-2" target="_blank">
+                    <i class="fa-brands fa-square-facebook"></i>
+                </a>
+                <a href="#" class="d-inline-block text-dark fs-5 me-2" target="_blank">
+                    <i class="fa-brands fa-linkedin"></i>
+                </a>
+                <a href="#" class="d-inline-block text-dark fs-5" target="_blank">
+                    <i class="fa-brands fa-square-twitter"></i>
+                </a>
+                <a href="#" class="d-inline-block text-dark fs-5" target="_blank">
+                    <i class="fa-brands fa-square-instagram"></i>
+                </a>
+            </div>
+            <div class="contact-section-contact-form">
+                <h1 class="form-heading">SEND A MESSAGE</h1>
+                <form class="query-form">
+                  <div class="row">
+                    <div class="column">
+                      <label for="user-name">Name</label>
+                      <input
+                        id="user-name"
+                        type="text"
+                        placeholder="Your name here"
+                        required
+                      />
+                    </div>
+                    <div class="column">
+                      <label for="user-email">Email</label>
+                      <input
+                        id="user-email"
+                        type="email"
+                        placeholder="Your email here"
+                        required
+                      />
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="column">
+                      <label for="subject">Subject</label>
+                      <input
+                        id="subject"
+                        type="text"
+                        placeholder="Your subject here"
+                        required
+                      />
+                    </div>
+                    <div class="column">
+                      <label for="phone_number">Phone Number</label>
+                      <input
+                        id="phone_number"
+                        type="text"
+                        placeholder="Your phone number here"
+                        required
+                      />
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="column">
+                      <label for="query-message">Message (Optional)</label>
+                      <textarea id="query-message" rows="5"></textarea>
+                    </div>
+                  </div>
+                  <button>Send</button>
+                </form>
+              </div>
+        </div>
+    </section>
+
+    <!-- ======================================================= 
+                    Footer
+    ========================================================== -->
+    <custom-footer></custom-footer>
+    
+    <script src="component/header&footer.js"></script>
+    <script src="index.js"></script>
+    
+</body>
+</html>

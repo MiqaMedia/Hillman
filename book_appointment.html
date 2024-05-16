@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hillman Schedule Booking</title>
+    <link 
+        rel="stylesheet" 
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+        integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+        crossorigin="anonymous" 
+        referrerpolicy="no-referrer" 
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link 
+        href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css">
+    <style>
+        body {
+            background-color: #8280fc;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-size: 100% 100%;
+        }
+        .calendly-section{
+            margin-top: 6rem;
+        }
+        .calendly-inline-widget{
+            min-width:320px; 
+            height:700px;
+        }
+    </style>
+</head>
+
+<body>
+<!-- ======================================================= 
+                    Header
+========================================================== -->
+    <custom-header></custom-header>
+<!-- ======================================================= 
+                    Calendly inline widget begin
+========================================================== -->
+    <h1 class="appointment-heading">Booking Appointment</h1>
+    <div class="calendly-section">
+        <div 
+            class="calendly-inline-widget" 
+            data-url="https://calendly.com/sales-3dzn/connect-with-us?primary_color=ff9f00"
+        ></div>
+    </div>
+<!-- ======================================================= 
+                    Footer
+========================================================== -->
+    <custom-footer></custom-footer>
+
+    <script 
+        type="text/javascript" 
+        src="https://assets.calendly.com/assets/external/widget.js" 
+        async
+    ></script>
+    <script src="component/header&footer.js"></script>
+    <script src="index.js"></script>
+</body>
+
+</html>
