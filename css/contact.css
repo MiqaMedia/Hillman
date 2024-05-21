@@ -30,9 +30,10 @@
   background: #f1f1f1; 
   border-radius: 0.5rem; 
   padding: 3rem 3rem 8rem 3rem;
+  box-shadow: 0 0 2rem rgba(0, 0, 0, 0.2);
 }
 .contact-section-location-container {
-  margin-right: 1rem;
+  margin-right: 3rem;
 }
 .location-container-map{
   border-radius: 1rem;
@@ -41,15 +42,44 @@
 .contact-section-location-container h5{
   font-size: 1.7rem;
   margin: 1rem 0 1rem 0;
+  letter-spacing: .1rem;
 }
 .contact-section-location-container a{
   font-size: 1.4rem;
   color: #888686;
   margin-right: 2rem;
+  letter-spacing: .2rem;
 }
 #contact-section-social-icon{
   font-size: 3rem;
 }
 .contact-section-contact-form{
-  margin-left: 1rem;
+  margin-left: 3rem;
+}
+
+button{
+  background: white;
+  padding: 1rem 2rem;
+  font-size: 1.6rem;
+  font-weight: bold;
+  color:white;
+  background-color:#ed8106 ;
+  border: none;
+  outline: none;
+  border-radius: 1rem;
+  box-shadow: 0 1.6rem 3.2rem 0 rgba(0, 0, 0, 0.2);
+}
+button:hover{
+  background-color: orange;
+  color: white;
+  transition: .3s;
+  cursor: pointer;
+}
+
+i{
+  color: #ed8106;
+}
+i:hover{
+  color: orange;
+  transition: .3s;
 }
